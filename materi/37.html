@@ -1,162 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html>
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <meta charset="UTF-8">
+        <title>Browse For Folder</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
     </head>
-    <body>
-        <div class="container-main">
-            <h2 class="judul">Browse For Folder</h2>
+    <body class="vscode-body vscode-light">
+        <h1 id="browse-for-folder">Browse For Folder</h1>
+<h2 id="situs-dokumentasi">Situs Dokumentasi</h2>
+<blockquote>
+<p>Link : <a href="http://ss64.com">http://ss64.com</a></p>
+</blockquote>
+<h2 id="example">Example</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> folder, path
 
-            <div class="container-main2">
-                <h2>Situs dokumentasi</h2>
+<span class="hljs-keyword">set</span> folder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;Select Folder&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<p>Hasil :</p>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\1.PNG" alt="1"></p>
+<h2 id="dokumentasi">Dokumentasi</h2>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\2.PNG" alt="2"></p>
+<h2 id="example-16384">Example 16384</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> folder, path
 
-                <ul>
-                    <li>
-                        Link :
-                        <a
-                            href="http://ss64.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >http://ss64.com</a
-                        >
-                    </li>
-                </ul>
+<span class="hljs-keyword">set</span> folder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;Select Folder&quot;</span>, <span class="hljs-number">16384</span>, <span class="hljs-number">0</span>)
+</code></pre>
+<p>Hasil :</p>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\3.PNG" alt="3"></p>
+<h2 id="program-file">Program File</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> folder, path
 
-                <hr />
+<span class="hljs-keyword">set</span> folder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;Select Folder&quot;</span>, <span class="hljs-number">16384</span>, <span class="hljs-number">38</span>)
+</code></pre>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\4.PNG" alt="4"></p>
+<h2 id="sesuai-keinginan">Sesuai Keinginan</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> folder, path
 
-                <h2>Example</h2>
+<span class="hljs-keyword">set</span> folder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;Select Folder&quot;</span>, <span class="hljs-number">16384</span>, <span class="hljs-string">&quot;C:\Users\Program Is Fun\downloads&quot;</span>)
+</code></pre>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\5.PNG" alt="5"></p>
+<h2 id="mengambil-title">Mengambil Title</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> objFolder, path
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/1.PNG" />
-                </div>
+<span class="hljs-keyword">set</span> objFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;Select Folder&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <ul>
-                    <li>Hasil :</li>
-                </ul>
+<span class="hljs-keyword">if</span> objFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+    MsgBox <span class="hljs-string">&quot;Canceled&quot;</span>
+    WScript.Quit
+<span class="hljs-keyword">else</span>
+    MsgBox objFolder.title
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+</code></pre>
+<p>Hasil :</p>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\6.PNG" alt="6"></p>
+<h2 id="mengambil-pathnya">Mengambil Pathnya</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> objFolder
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/2.PNG" />
-                </div>
+<span class="hljs-keyword">set</span> objFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;Select Folder&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <hr />
+<span class="hljs-keyword">if</span> objFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+    MsgBox <span class="hljs-string">&quot;Canceled&quot;</span>
+    WScript.Quit
+<span class="hljs-keyword">else</span>
+    MsgBox objFolder.self.path
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+</code></pre>
+<p>Hasil :</p>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\7.PNG" alt="7"></p>
+<h2 id="menggunakan-function">Menggunakan Function</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
 
-                <h2>Dokumentasi</h2>
+<span class="hljs-keyword">Function</span> selectFolder(Desc)
+    <span class="hljs-keyword">set</span> selectFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, Desc, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/3.PNG" />
-                </div>
+    <span class="hljs-keyword">if</span> selectFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+        WScript.Quit
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">Function</span>
 
-                <hr />
+MsgBox selectFolder(<span class="hljs-string">&quot;Select folder for copying&quot;</span>).self.path
+</code></pre>
+<p>Hasil :</p>
+<p><img src="file:///d:\Project\com.fda.vbs\asset\img\37\8.PNG" alt="8"></p>
+<h2 id="copy-file">Copy File</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
 
-                <h2>Example 16384</h2>
+<span class="hljs-keyword">Function</span> selectFolder(Desc)
+    <span class="hljs-keyword">set</span> selectFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, Desc, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/4.PNG" />
-                </div>
+    <span class="hljs-keyword">if</span> selectFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+        WScript.Quit
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">Function</span>
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/5.PNG" />
-                </div>
+selectFolder(<span class="hljs-string">&quot;Copy item here: &quot;</span>).copyHere <span class="hljs-string">&quot;syiber.txt&quot;</span>
+</code></pre>
+<h2 id="memindahkan-isi-folder">Memindahkan Isi Folder</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
 
-                <hr />
+<span class="hljs-keyword">Function</span> selectFolder(Desc)
+    <span class="hljs-keyword">set</span> selectFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, Desc, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <h2>Program file</h2>
+    <span class="hljs-keyword">if</span> selectFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+        WScript.Quit
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">Function</span>
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/6.PNG" />
-                </div>
+selectFolder(<span class="hljs-string">&quot;Copy item here: &quot;</span>).moveHere <span class="hljs-string">&quot;syiber.txt&quot;</span>
+</code></pre>
+<h2 id="memindahkan-isi-dalam-folder-ke-folder-lain">Memindahkan Isi Dalam Folder Ke Folder Lain</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> file
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/7.PNG" />
-                </div>
+<span class="hljs-keyword">Function</span> selectFolder(Desc)
+    <span class="hljs-keyword">set</span> selectFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, Desc, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <hr />
+    <span class="hljs-keyword">if</span> selectFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+        WScript.Quit
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">Function</span>
 
-                <h2>Sesuai keinginan</h2>
+<span class="hljs-keyword">set</span> file = selectFolder(<span class="hljs-string">&quot;Move items:&quot;</span>).Items
+selectFolder(<span class="hljs-string">&quot;Paste items: &quot;</span>).moveHere file
+</code></pre>
+<h2 id="melihat-isi-folder-1-per-1">Melihat Isi Folder 1 Per 1</h2>
+<pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> objApp : <span class="hljs-keyword">set</span> objApp = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;shell.application&quot;</span>)
+<span class="hljs-keyword">dim</span> item
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/8.PNG" />
-                </div>
+<span class="hljs-keyword">Function</span> selectFolder(Desc)
+    <span class="hljs-keyword">set</span> selectFolder = objApp.BrowseForFolder(<span class="hljs-number">0</span>, Desc, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
-                <div class="container-gmb">
-                    <img src="../aset/img/37/9.PNG" />
-                </div>
+    <span class="hljs-keyword">if</span> selectFolder  <span class="hljs-keyword">is</span> <span class="hljs-literal">Nothing</span> <span class="hljs-keyword">then</span>
+        WScript.Quit
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">Function</span>
 
-                <hr />
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> item <span class="hljs-keyword">in</span> selectFolder(<span class="hljs-string">&quot;View Item&quot;</span>).items
+    MsgBox item.name
+<span class="hljs-keyword">next</span>
+</code></pre>
 
-                <h2>Mengambil title</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/10.PNG" />
-                </div>
-
-                <ul>
-                    <li>Hasil :</li>
-                </ul>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/11.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Mengambil pathnya</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/12.PNG" />
-                </div>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/13.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>menggunakan function</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/14.PNG" />
-                </div>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/15.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Copy file</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/16.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Memindahkan isi folder</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/17.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Copy isi dalam folder ke folder lain</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/18.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Melihat isi folder 1 per 1</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/37/19.PNG" />
-                </div>
-            </div>
-        </div>
+        
+        
     </body>
-</html>
+    </html>

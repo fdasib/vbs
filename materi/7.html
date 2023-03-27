@@ -1,109 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Do Loops</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$="\#gh-light-mode-only"],
+            .vscode-light img[src$="\#gh-dark-mode-only"] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../asset/css/markdown.css" />
+        <link rel="stylesheet" href="../asset/css/highlight.css" />
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC",
+                    "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
     </head>
-    <body>
-        <div class="container-main">
-            <h2 class="judul">Do Loops</h2>
+    <body class="vscode-body vscode-light">
+        <h1 id="do-loops">Do Loops</h1>
+        <h2 id="basic">Basic</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Do</span>
+    MsgBox <span class="hljs-string">&quot;Hello&quot;</span>
+<span class="hljs-keyword">Loop</span>
+</code></pre>
+        <h2 id="keluar-dari-do-loops">Keluar dari Do Loops</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Do</span>
+    MsgBox <span class="hljs-string">&quot;Hello&quot;</span>
+    <span class="hljs-keyword">Exit</span> <span class="hljs-keyword">Do</span>
+<span class="hljs-keyword">Loop</span>
+</code></pre>
+        <h2 id="menggunakan-wscriptquit-tidak-tepat">
+            Menggunakan wscript.quit tidak tepat
+        </h2>
+        <blockquote>
+            <p>
+                karena akan langsung keluar dari program dan kode selanjutkan
+                tidak berjalan
+            </p>
+        </blockquote>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Do</span>
+    MsgBox <span class="hljs-string">&quot;Hello&quot;</span>
+    WScript.Quit
+<span class="hljs-keyword">Loop</span>
 
-            <div class="container-main2">
-                <h2>Basic</h2>
+MsgBox <span class="hljs-string">&quot;Second&quot;</span>
+</code></pre>
+        <h2 id="do-until">Do Until</h2>
+        <blockquote>
+            <p>untuk berhenti dengan syarat</p>
+        </blockquote>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> n
 
-                <div class="container-gmb">
-                    <img src="../aset/img/7/1.PNG" />
-                </div>
+n = <span class="hljs-number">1</span>
+<span class="hljs-keyword">do</span> Until n = <span class="hljs-number">5</span>
+    MsgBox n
+    n = n + <span class="hljs-number">1</span>
+<span class="hljs-keyword">Loop</span>
+</code></pre>
+        <h2 id="until-berada-di-akhir">Until berada di akhir</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> n
 
-                <hr />
+n = <span class="hljs-number">1</span>
+<span class="hljs-keyword">do</span>
+    MsgBox n
+    n = n + <span class="hljs-number">1</span>
+<span class="hljs-keyword">Loop</span> Until n = <span class="hljs-number">5</span>
+</code></pre>
+        <h2 id="menggunakan-lebih-dari">Menggunakan lebih dari</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> n
 
-                <h2>Keluar dari Do Loops</h2>
+n = <span class="hljs-number">1</span>
+<span class="hljs-keyword">do</span> Until n &gt; <span class="hljs-number">5</span>
+    n = n + <span class="hljs-number">1</span>
+    MsgBox n
+<span class="hljs-keyword">Loop</span>
+</code></pre>
+        <h2 id="do-while">Do While</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> n
 
-                <div class="container-gmb">
-                    <img src="../aset/img/7/2.PNG" />
-                </div>
+n = <span class="hljs-number">0</span>
+<span class="hljs-keyword">do</span> <span class="hljs-keyword">while</span> n &lt; <span class="hljs-number">5</span>
+    n = n + <span class="hljs-number">1</span>
+    MsgBox n
+<span class="hljs-keyword">Loop</span>
+</code></pre>
+        <h2 id="program-untuk-mengetikkan-password-dengan-benar">
+            Program untuk mengetikkan password dengan benar
+        </h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> pass
 
-                <hr />
+<span class="hljs-keyword">do</span> Until pass = <span class="hljs-string">&quot;faizal&quot;</span>
+    pass = <span class="hljs-built_in">InputBox</span>(<span class="hljs-string">&quot;Password: &quot;</span>)
+<span class="hljs-keyword">loop</span>
+</code></pre>
+        <blockquote>
+            <p>bisa juga menggunakan &lt;&gt;</p>
+        </blockquote>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> pass
 
-                <h2>menggunakan wscript.quit tidak tepat</h2>
+<span class="hljs-keyword">do</span> <span class="hljs-keyword">while</span> pass &lt;&gt; <span class="hljs-string">&quot;faizal&quot;</span>
+    pass = <span class="hljs-built_in">InputBox</span>(<span class="hljs-string">&quot;Password: &quot;</span>)
+<span class="hljs-keyword">loop</span>
+</code></pre>
+        <blockquote>
+            <p>bisa juga seperti ini:</p>
+        </blockquote>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> pass
 
-                <ul>
-                    <li>
-                        karena akan langsung keluar dari program dan kode
-                        selanjutnya tidak dijalankan
-                    </li>
-                </ul>
+<span class="hljs-keyword">do</span>
+    pass = <span class="hljs-built_in">InputBox</span>(<span class="hljs-string">&quot;Password: &quot;</span>)
+    <span class="hljs-keyword">if</span> pass = <span class="hljs-string">&quot;faizal&quot;</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">Exit</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">loop</span>
 
-                <div class="container-gmb">
-                    <img src="../aset/img/7/3.PNG" />
-                </div>
+MsgBox <span class="hljs-string">&quot;Correct&quot;</span>
+</code></pre>
+        <h2 id="program-sederhana">Program Sederhana</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> pass
 
-                <hr />
+<span class="hljs-keyword">do</span>
+    pass = <span class="hljs-built_in">InputBox</span>(<span class="hljs-string">&quot;Password: &quot;</span>)
+    <span class="hljs-keyword">if</span> pass = <span class="hljs-string">&quot;faizal&quot;</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">Exit</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">elseif</span> pass = <span class="hljs-string">&quot;&quot;</span> <span class="hljs-keyword">Then</span>
+        MsgBox <span class="hljs-string">&quot;Don&#x27;t leave field blank.&quot;</span>
+    <span class="hljs-keyword">elseif</span> pass &lt;&gt; <span class="hljs-string">&quot;faizal&quot;</span> <span class="hljs-keyword">then</span>
+        MsgBox <span class="hljs-string">&quot;inccorect&quot;</span>, vbCritical
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+<span class="hljs-keyword">loop</span>
 
-                <h2>Do Until</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/4.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Until berada diakhir</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/5.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Menggunakan lebih dari</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/6.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Do While</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/7.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Program untuk mengetikkan password dengan benar</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/8.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Bisa juga menggunakan <></h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/9.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>bisa juga</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/10.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Program sederhana</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/7/11.PNG" />
-                </div>
-            </div>
-        </div>
+MsgBox <span class="hljs-string">&quot;Correct&quot;</span>
+</code></pre>
     </body>
 </html>

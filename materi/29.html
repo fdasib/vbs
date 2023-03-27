@@ -1,54 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Get File Folder Methods</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$="\#gh-light-mode-only"],
+            .vscode-light img[src$="\#gh-dark-mode-only"] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../asset/css/markdown.css" />
+        <link rel="stylesheet" href="../asset/css/highlight.css" />
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC",
+                    "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
     </head>
-    <body>
-        <div class="container-main">
-            <h2 class="judul">Get File Folder Methods</h2>
+    <body class="vscode-body vscode-light">
+        <h1 id="get-file-folder-methods">Get File Folder Methods</h1>
+        <h2 id="basic">Basic</h2>
+        <pre><code class="language-vbs">fso.CopyFile <span class="hljs-string">&quot;source&quot;</span>, <span class="hljs-string">&quot;destination&quot;</span>
+fso.MoveFile <span class="hljs-string">&quot;source&quot;</span>, <span class="hljs-string">&quot;destination&quot;</span>
+fso.OpenTextFile <span class="hljs-string">&quot;Location&quot;</span>, IOmode, overright
+fso.DeleteFile <span class="hljs-string">&quot;Location&quot;</span>
+</code></pre>
+        <h2 id="mengcopy-file">Mengcopy File</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> fso, file
 
-            <div class="container-main2">
-                <h2>Basic</h2>
+<span class="hljs-keyword">Set</span> fso = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;Scripting.FileSystemObject&quot;</span>)
+<span class="hljs-keyword">set</span> file = fso.GetFile(<span class="hljs-string">&quot;img.jpg&quot;</span>)
 
-                <div class="container-gmb">
-                    <img src="../aset/img/29/1.PNG" />
-                </div>
+file.Copy <span class="hljs-string">&quot;C:\Users\Program Is Fun\downloads\&quot;</span>
+</code></pre>
+        <h2 id="memindahkan-file">Memindahkan File</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> fso, file
 
-                <hr />
+<span class="hljs-keyword">Set</span> fso = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;Scripting.FileSystemObject&quot;</span>)
+<span class="hljs-keyword">set</span> file = fso.GetFile(<span class="hljs-string">&quot;img.jpg&quot;</span>)
 
-                <h2>Mengcopy file</h2>
+file.Move <span class="hljs-string">&quot;C:\Users\Program Is Fun\downloads\faizal\&quot;</span>
+</code></pre>
+        <h2 id="menghapus-file">Menghapus File</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> fso, file
 
-                <div class="container-gmb">
-                    <img src="../aset/img/29/2.PNG" />
-                </div>
+<span class="hljs-keyword">Set</span> fso = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;Scripting.FileSystemObject&quot;</span>)
+<span class="hljs-keyword">set</span> file = fso.GetFile(<span class="hljs-string">&quot;C:\Users\Program Is Fun\downloads\faizal\img.jpg&quot;</span>)
 
-                <hr />
+file.Delete
+</code></pre>
+        <h2 id="openastextstream">OpenAsTextStream</h2>
+        <pre><code class="language-vbs"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> fso, file, x
 
-                <h2>Memindahkan file</h2>
+<span class="hljs-keyword">Set</span> fso = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">&quot;Scripting.FileSystemObject&quot;</span>)
+<span class="hljs-keyword">set</span> file = fso.GetFile(<span class="hljs-string">&quot;syiber.txt&quot;</span>)
 
-                <div class="container-gmb">
-                    <img src="../aset/img/29/3.PNG" />
-                </div>
+<span class="hljs-keyword">set</span> x = file.OpenAsTextStream(<span class="hljs-number">1</span>)
 
-                <hr />
-
-                <h2>menghapus file</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/29/4.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>OpenAsTextStream</h2>
-
-                <div class="container-gmb">
-                    <img src="../aset/img/29/5.PNG" />
-                </div>
-            </div>
-        </div>
+MsgBox x.ReadAll
+</code></pre>
     </body>
 </html>
