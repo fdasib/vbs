@@ -1,90 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Command Prompt Argument</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$="\#gh-light-mode-only"],
+            .vscode-light img[src$="\#gh-dark-mode-only"] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../asset/css/markdown.min.css" />
+        <link rel="stylesheet" href="../asset/css/highlight.min.css" />
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC",
+                    "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
     </head>
-    <body>
-        <div class="container-main">
-            <h2 class="judul">Command Prompt Argument</h2>
+    <body class="vscode-body vscode-light">
+        <h1 id="command-prompt-argument">Command Prompt Argument</h1>
+        <h2 id="basic">Basic</h2>
+        <pre><code class="language-vb"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> args, arg
 
-            <div class="container-main2">
-                <h2>Basic</h2>
+<span class="hljs-keyword">set</span> args = WScript.Arguments
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/1.PNG" />
-                </div>
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> arg  <span class="hljs-keyword">in</span> args
+    MsgBox arg
+<span class="hljs-keyword">Next</span>
+</code></pre>
+        <h2 id="cara-memanggil">Cara Memanggil</h2>
+        <p><img src="file:///d:\Project\vbs\asset\img\39\1.PNG" alt="1" /></p>
+        <p>Jika memanggil ada spasi</p>
+        <p><img src="file:///d:\Project\vbs\asset\img\39\2.PNG" alt="2" /></p>
+        <h2 id="memasukkan-ke-variabel">Memasukkan ke variabel</h2>
+        <pre><code class="language-vb"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> args, arg, list
 
-                <ul>
-                    <li>cara memanggil</li>
-                </ul>
+<span class="hljs-keyword">set</span> args = WScript.Arguments
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/2.PNG" />
-                </div>
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> arg  <span class="hljs-keyword">in</span> args
+    list = list &amp; arg &amp; vbLf
+<span class="hljs-keyword">Next</span>
 
-                <hr />
+MsgBox list
+</code></pre>
+        <p><img src="file:///d:\Project\vbs\asset\img\39\3.PNG" alt="3" /></p>
+        <h2 id="solusi-jika-tidak-diisi-argumentsnya">
+            Solusi Jika Tidak Diisi Argumentsnya
+        </h2>
+        <pre><code class="language-vb"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> args, arg, list
 
-                <h2>cara memanggil dengan spasi</h2>
+<span class="hljs-keyword">set</span> args = WScript.Arguments
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/3.PNG" />
-                </div>
+<span class="hljs-keyword">if</span> args.Count = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>
+    WScript.echo <span class="hljs-string">&quot;no arguments&quot;</span>
+    WScript.Quit
+<span class="hljs-keyword">else</span>
+    <span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> arg  <span class="hljs-keyword">in</span> args
+        list = list &amp; arg &amp; vbLf
+    <span class="hljs-keyword">Next</span>
 
-                <hr />
+    MsgBox list
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+</code></pre>
+        <p><img src="file:///d:\Project\vbs\asset\img\39\4.PNG" alt="4" /></p>
+        <h2 id="membatasi-minimal-jumlah-arguments">
+            Membatasi Minimal Jumlah Arguments
+        </h2>
+        <pre><code class="language-vb"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> args, arg, list
 
-                <h2>Memasukkan ke variable</h2>
+<span class="hljs-keyword">set</span> args = WScript.Arguments
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/4.PNG" />
-                </div>
+<span class="hljs-keyword">if</span> args.Count = <span class="hljs-number">3</span> <span class="hljs-keyword">then</span>
+    WScript.echo <span class="hljs-string">&quot;no arguments&quot;</span>
+    WScript.Quit
+<span class="hljs-keyword">else</span>
+    <span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> arg  <span class="hljs-keyword">in</span> args
+        list = list &amp; arg &amp; vbLf
+    <span class="hljs-keyword">Next</span>
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/5.PNG" />
-                </div>
+    MsgBox list
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
+</code></pre>
+        <h2 id="mengambil-arguments-berdasarkan-urutan">
+            Mengambil Arguments Berdasarkan Urutan
+        </h2>
+        <pre><code class="language-vb"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> fname, lname, age
 
-                <hr />
+fname = WScript.Arguments(<span class="hljs-number">0</span>)
+lname = WScript.Arguments(<span class="hljs-number">1</span>)
+age = WScript.Arguments(<span class="hljs-number">2</span>)
 
-                <h2>solusi jika tidak diisi argumentsnya</h2>
+MsgBox age
+</code></pre>
+        <h2 id="menghitung-isi-folder-drive">Menghitung Isi Folder Drive</h2>
+        <pre><code class="language-vb"><span class="hljs-keyword">Option</span> <span class="hljs-keyword">Explicit</span>
+<span class="hljs-keyword">dim</span> fso, drives, drive
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/6.PNG" />
-                </div>
+<span class="hljs-keyword">Set</span> fso = CreateObject(<span class="hljs-string">&quot;Scripting.FileSystemObject&quot;</span>)
+<span class="hljs-keyword">set</span> drives = WScript.Arguments
 
-                <div class="container-gmb">
-                    <img src="../asset/img/39/7.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>membatasi minimal jumlah arguments</h2>
-
-                <div class="container-gmb">
-                    <img src="../asset/img/39/8.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Mengambil argument berdasarkan urutan</h2>
-
-                <div class="container-gmb">
-                    <img src="../asset/img/39/9.PNG" />
-                </div>
-
-                <hr />
-
-                <h2>Menghitung isi folder drive</h2>
-
-                <div class="container-gmb">
-                    <img src="../asset/img/39/10.PNG" />
-                </div>
-
-                <div class="container-gmb">
-                    <img src="../asset/img/39/11.PNG" />
-                </div>
-            </div>
-        </div>
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> drive <span class="hljs-keyword">in</span> drives
+    MsgBox fso.GetFolder(drive &amp; <span class="hljs-string">&quot;:\&quot;</span>).subFolders.count, vbOKOnly, <span class="hljs-string">&quot;Folder in &quot;</span> &amp; drive
+<span class="hljs-keyword">Next</span>
+</code></pre>
+        <p><img src="file:///d:\Project\vbs\asset\img\39\5.PNG" alt="5" /></p>
     </body>
 </html>

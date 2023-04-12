@@ -9,5 +9,3 @@ Fungsi `GetObject` dapat digunakan untuk membuka file / aplikasi OLE, seperti ex
 Fungsi ini memiliki 1 parameter wajib : `PathName` yang merupakan string yang menunjukkan jalur file / program yang ingin dibuka.
 
 Selain itu, `GetObject` juga dapat menerima parameter opsional: `class` dan `ProgID` yang menentukan tipe objek yang ingin diambil.
-
-## Contoh membuka file excel dan memanipulasi datanya:
